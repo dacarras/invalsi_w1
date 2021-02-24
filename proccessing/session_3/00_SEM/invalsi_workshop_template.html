@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Advanced Secondary Analysis of Large-scale Assessments in Education</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Sandoval-Hernández, A., Carrasco, D. &amp; Miranda, D." />
+    <link href="libs/remark-css-0.0.1/ninjutsu.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="animate.min.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+
+class: title-slide, middle, center
+
+background-image: url(img/invalsi_left_blue.png), url(img/invalsi_right_blue.png)
+background-position: top left, top right
+background-size: 10%, 10%
+
+&lt;img src="./img/blank_space.png" width="2%" height="2%" /&gt;
+
+&lt;br&gt;
+
+.line_space_07[
+## Advanced Secondary Analysis of Large-scale
+## Assessments in Education:
+### .text_70[A Discussion of Methods]
+]
+&lt;br&gt;
+
+.line_space_05[
+.text_100[Sandoval-Hernández, A., PhD] .text_70[ash22@bath.ac.uk]
+
+.text_100[Carrasco, D., PhD] .text_70[dacarras@uc.cl]
+
+.text_100[Miranda, D., PhD] .text_70[damiran1@uc.l]
+
+.text_100[Inostroza, P., Msc(c)] .text_70[xxxxx@xxx.l]
+
+&lt;br&gt;
+
+.text_70[V Seminar: “INVALSI data: a tool for teaching and scientific research”]
+
+.text_70[ROME,  February 25th – 28th, 2021]
+
+]
+
+&lt;br&gt;
+
+&lt;img src="./img/bath_logo.svg" width="10%" /&gt;&lt;img src="./img/blank_space.png" width="10%" /&gt;&lt;img src="./img/mide_logo_2019.png" width="10%" /&gt;&lt;img src="./img/blank_space.png" width="10%" /&gt;&lt;img src="./img/ku_leuven_logo.svg" width="10%" /&gt;
+
+
+---
+class: center, middle, inverse
+
+## Outline
+
+Brief theoretical foundations
+
+--
+
+CFA Estimation: example
+
+--
+
+SEM estimation: example
+
+
+
+---
+class: center, middle, inverse
+
+# Brief theoretical foundations
+
+---
+## Measurement in social sciences
+
+- A hughe number of constructs, conceptos, and attributes are considered as latent 
+
+- The less measurement error, the better instrument
+
+&lt;img src="./files/factor.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+---
+## Total error: sources of error
+
+&lt;img src="./files/errortotal.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+
+---
+## Latent variables
+
+
+- Indirectly observed: hipothetical
+
+- Could be infered from observed indicators (e.g. items)
+
+- Multiple indicators that covariates, could be intepreted as common factor 
+
+---
+## Latent variables
+
+- Clasical Test Theory (simplified):
+
+$$X = T + E $$
+$$ \sigma^{2}_x = \sigma^{2}_t +  \sigma^{2}_e$$
+
+- Existence of multiple indicators allows to differentiate:
+
+common variance `$$\sigma^{2}_t$$` and unique variance `$$\sigma^{2}_t$$`
+
+
+---
+## Factor Analysis
+
+- Conjunto de métodos para explicar correlaciones entre variables interpretables como variables latentes o factores
+
+- La existencia de un factor común explicaría la asociación entre indicadores
+
+- Dependencia condicional: las correlaciones serían 0 si se parcializa el factor.
+
+---
+## Purpose
+
+- Reducir complejidad e incrementar la comprensión
+
+- Validar una escala en términos del constructo que mide
+
+- Separar varianza única de varianza común
+
+
+---
+## General fundaments
+
+- Covarianza, correlación y correlación parcial
+
+- Regresión simple y múltiple
+
+- En general, se pueden considerar los mismos supuestos de regresión líneal
+
+---
+## Assumptions 
+
+- Nivel de medición intervalar 
+
+- Normalidad de las mediciones (multivariada)
+
+- Relación líneal entre variables
+
+- Correlaciones deben tener cierto nivel para su agrupación
+
+- Tamaño muestral: &gt;200 casos o entre 5-10 casos por variable
+
+---
+## Diagrams of for represent
+
+&lt;img src="./files/diagrams.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+## ¿Parsimony?
+
+&lt;img src="./files/growth2.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+
+---
+## Three methods for measurement evaluations
+
+- Principal component analyses: Definición de componente a partir de una combinación líneal de variables
+
+- Exploratory factor analyses: técnica descriptiva que permite determinar un número apropiado de factores latentes a un set de indicadores, separando varianza común de varianza única
+
+- **Confirmatory Factor Analyses**: técnica que permite hipotetizar (y confirmar) una variable latente, especifícando una serie de parámetros 
+
+---
+## Three methods for measurement evaluations
+
+&lt;img src="./files/pcaefacfa.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+## Beyond measurement model: SEM
+
+- SEM allow to estimate models that include measurement and structural relations
+
+&lt;img src="./files/models1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+## Structural regressions between latent variables
+
+&lt;img src="./files/fullwang.jpg" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+## Regressions between latent on observed variables (MIMIC)
+
+&lt;img src="./files/mimic.jpg" width="40%" style="display: block; margin: auto;" /&gt;
+
+---
+## Regressions between observed on latent variables
+
+&lt;img src="./files/med_sem.jpg" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+## Regressions between observed variables
+
+&lt;img src="./files/jose_33.jpg" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+## Estimation process of CFA and SEM
+
+&lt;img src="./files/kline.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+
+---
+## Step by step
+
+- Specification and identification
+- Estimation
+- Fit interpretation
+- Report
+
+
+&lt;img src="./files/kline.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+---
+# Hands on!
+
+.center[![](https://upload.wikimedia.org/wikipedia/commons/7/7e/Mudra-Naruto-KageBunshin.svg)]
+
+
+---
+class: center, middle, inverse
+
+# CFA example
+
+
+&lt;img src="./files/plotmodel1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+## Measurement model: Political participation using ICCS 2016 (Italy)
+
+
+
+---
+## Read data
+
+```r
+pacman::p_load(dplyr, stargazer, skimr, xaringan, srvyr, lme4, broom, texreg, scales, plotly, desctable, descriptr, forcats, GGally, MplusAutomation, semPlot, corrplot)
+
+
+load("./data/mergeita16.Rdata")
+
+desc= mergeita16 %&gt;%
+  select(actspray, actblock, actocup, acttalk, actrep, actmarch, actsign, votopre, votomun, votoinf)
+stargazer(desc,title="Descriptive Statistics", type = "text")
+```
+
+```
+
+Descriptive Statistics
+============================================================
+Statistic   N   Mean  St. Dev.  Min  Pctl(25) Pctl(75)  Max 
+------------------------------------------------------------
+actspray  3,373 1.746  0.925   1.000  1.000    2.000   4.000
+actblock  3,376 1.646  0.832   1.000  1.000    2.000   4.000
+actocup   3,378 1.651  0.849   1.000  1.000    2.000   4.000
+acttalk   3,390 2.791  0.835   1.000  2.000    3.000   4.000
+actrep    3,369 2.207  0.750   1.000  2.000    3.000   4.000
+actmarch  3,359 2.557  0.826   1.000  2.000    3.000   4.000
+actsign   3,378 2.649  0.830   1.000  2.000    3.000   4.000
+votopre   3,386 3.525  0.705   1.000  3.000    4.000   4.000
+votomun   3,382 3.471  0.739   1.000  3.000    4.000   4.000
+votoinf   3,356 3.515  0.735   1.000  3.000    4.000   4.000
+------------------------------------------------------------
+```
+
+
+---
+## Explore correlations
+
+```r
+corMat  &lt;- cor(desc, use = "pairwise.complete.obs")  # estimar matriz pearson
+options(digits=3) # decimales
+print(corMat)
+```
+
+```
+         actspray actblock actocup acttalk actrep actmarch actsign votopre
+actspray  1.00000   0.5914  0.5707 0.00814  0.120   0.0604  0.0768 -0.1049
+actblock  0.59139   1.0000  0.7162 0.06033  0.220   0.1459  0.1599 -0.0687
+actocup   0.57067   0.7162  1.0000 0.05204  0.193   0.1397  0.1565 -0.0632
+acttalk   0.00814   0.0603  0.0520 1.00000  0.476   0.2788  0.3475  0.2681
+actrep    0.12045   0.2199  0.1935 0.47626  1.000   0.3202  0.3503  0.1679
+actmarch  0.06043   0.1459  0.1397 0.27885  0.320   1.0000  0.4873  0.1899
+actsign   0.07682   0.1599  0.1565 0.34753  0.350   0.4873  1.0000  0.2094
+votopre  -0.10486  -0.0687 -0.0632 0.26807  0.168   0.1899  0.2094  1.0000
+votomun  -0.14988  -0.0837 -0.0853 0.24220  0.157   0.1853  0.2046  0.7562
+votoinf  -0.12834  -0.1056 -0.0871 0.21644  0.113   0.2067  0.2049  0.5173
+         votomun votoinf
+actspray -0.1499 -0.1283
+actblock -0.0837 -0.1056
+actocup  -0.0853 -0.0871
+acttalk   0.2422  0.2164
+actrep    0.1571  0.1127
+actmarch  0.1853  0.2067
+actsign   0.2046  0.2049
+votopre   0.7562  0.5173
+votomun   1.0000  0.5505
+votoinf   0.5505  1.0000
+```
+
+---
+## Explore correlations
+
+```r
+stargazer(corMat, title="correlaciones", type = "text") #Latex table
+```
+
+```
+
+correlaciones
+==========================================================================================
+         actspray actblock actocup acttalk actrep actmarch actsign votopre votomun votoinf
+------------------------------------------------------------------------------------------
+actspray    1      0.591    0.571   0.008  0.120   0.060    0.077  -0.105  -0.150  -0.128 
+actblock  0.591      1      0.716   0.060  0.220   0.146    0.160  -0.069  -0.084  -0.106 
+actocup   0.571    0.716      1     0.052  0.193   0.140    0.156  -0.063  -0.085  -0.087 
+acttalk   0.008    0.060    0.052     1    0.476   0.279    0.348   0.268   0.242   0.216 
+actrep    0.120    0.220    0.193   0.476    1     0.320    0.350   0.168   0.157   0.113 
+actmarch  0.060    0.146    0.140   0.279  0.320     1      0.487   0.190   0.185   0.207 
+actsign   0.077    0.160    0.156   0.348  0.350   0.487      1     0.209   0.205   0.205 
+votopre   -0.105   -0.069  -0.063   0.268  0.168   0.190    0.209     1     0.756   0.517 
+votomun   -0.150   -0.084  -0.085   0.242  0.157   0.185    0.205   0.756     1     0.550 
+votoinf   -0.128   -0.106  -0.087   0.216  0.113   0.207    0.205   0.517   0.550     1   
+------------------------------------------------------------------------------------------
+```
+
+---
+## Explore correlations
+
+```r
+corrplot(corMat, type="lower",
+         order="AOE", cl.pos="b", tl.pos="d") #agrega nombres en diag.
+```
+
+&lt;img src="./files/corr.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+
+---
+## Model specification
+
+- Mplus Syntax
+
+
+```r
+m4 &lt;- mplusObject(
+  TITLE = "CFA;",
+  VARIABLE=" 
+  cluster = idschool_scr;
+  Stratification = jkzones;
+  Weight = totwgts;",
+  ANALYSIS=
+    "type = complex;",
+  
+  MODEL = "
+   turnout BY votopre votomun votoinf;
+   leg BY acttalk actrep actmarch actsign;
+   ill BY actspray actblock actocup;
+  "
+  ,
+  OUTPUT = "CINTERVAL sampstat mod stdyx;",
+  rdata = mergeita16)
+```
+
+
+
+- Generate input and output files
+
+
+```r
+fit4 &lt;- mplusModeler(m4, modelout = "m4.inp", run = 1L)
+```
+
+---
+## Model specification
+
+```r
+semPaths("./m4.out", intercepts = FALSE, rotation=2)
+```
+
+&lt;img src="./files/plotmodel1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+
+---
+## Model results
+
+```r
+screenreg(fit4, type = 'stdyx', summaries = c("ChiSqM_Value", "ChiSqM_PValue", "CFI", "TLI", "RMSEA_Estimate", "Observations"), digits = 3, single.row=TRUE)
+```
+
+&lt;img src="./files/model1.png" width="20%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: center, middle, inverse
+
+# SEM example
+---
+## SEM model: Political participation using ICCS 2016 (Italy)
+
+&lt;img src="./files/semfull.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+## Model specification: SEM (Education + Gender + Reading skills)
+
+- Mplus Syntax
+
+
+```r
+m7 &lt;- mplusObject(
+  TITLE = "SEM;",
+  VARIABLE=" 
+  cluster = idschool_scr;
+  Stratification = jkzones;
+  Weight = totwgts;",
+  ANALYSIS=
+    "type = complex;",
+  
+  MODEL = "
+   turnout BY votopre votomun votoinf;
+   leg BY acttalk actrep actmarch actsign;
+   ill BY actspray actblock actocup;
+   
+   turnout ON s_hisced s_gender ital ;
+   leg ON s_hisced s_gender ital;
+   ill ON s_hisced s_gender ital;
+   
+  "
+  ,
+  OUTPUT = "CINTERVAL sampstat mod stdyx;",
+  rdata = mergeita16)
+```
+
+
+
+- Generate input and output files
+
+
+```r
+fit7 &lt;- mplusModeler(m7, modelout = "m7.inp", run = 1L)
+```
+
+
+---
+## Model results
+
+```r
+screenreg(fit7, type = 'stdyx', summaries = c("ChiSqM_Value", "ChiSqM_PValue", "CFI", "TLI", "RMSEA_Estimate", "Observations"), digits = 3, single.row=TRUE)
+```
+
+&lt;img src="./files/modelfull.png" width="20%" style="display: block; margin: auto;" /&gt;
+---
+
+class: title-slide, middle, center
+
+background-image: url(img/invalsi_left_blue.png), url(img/invalsi_right_blue.png)
+background-position: top left, top right
+background-size: 10%, 10%
+
+&lt;img src="./img/blank_space.png" width="2%" height="2%" /&gt;
+
+&lt;br&gt;
+
+.line_space_07[
+## Muchas Gracias!
+]
+&lt;br&gt;
+
+.line_space_05[
+.text_100[Sandoval-Hernández, A., PhD] .text_70[ash22@bath.ac.uk]
+
+.text_100[Carrasco, D., PhD] .text_70[dacarras@uc.cl]
+
+.text_100[Miranda, D., PhD] .text_70[damiran1@uc.l]
+
+.text_100[Inostroza, P., Msc(c)] .text_70[xxxxx@xxx.l]
+
+&lt;br&gt;
+
+.text_70[V Seminar: “INVALSI data: a tool for teaching and scientific research”]
+
+.text_70[ROME,  February 25th – 28th, 2021]
+
+]
+
+&lt;br&gt;
+
+&lt;img src="./img/bath_logo.svg" width="10%" /&gt;&lt;img src="./img/blank_space.png" width="10%" /&gt;&lt;img src="./img/mide_logo_2019.png" width="10%" /&gt;&lt;img src="./img/blank_space.png" width="10%" /&gt;&lt;img src="./img/ku_leuven_logo.svg" width="10%" /&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"slideNumberFormat": "%current%",
+"countIncrementalSlides": false,
+"ratio": "16:9",
+"navigation": {
+"scroll": true
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
