@@ -7,10 +7,10 @@
 
 -   Introduction
 -   Data preparation
--   Latent Class Models
--   Structural Equation Models
+-   Latent Class Models example
+-   Structural Equation Models example
 
-> Note: press this link to [download all slides in
+> Note: press this [link to download all slides in
 > pdf](https://www.dropbox.com/sh/asn8sp0qf7f7rvl/AAAa_gBQuha513OQbTxsPHKMa?dl=1).
 
 # Workshop examples
@@ -23,12 +23,20 @@
     -   link also
         [here](https://www.dropbox.com/sh/li9sndp5irp0ffa/AACcp5llXkcCWKDwcFeySt7Na?dl=1).
 
-## LCA
+## Latent Class Models example
 
--   Download presented examples \[`to be updated soon`\]
+-   Download presented examples
+    \[`to be updated soon`\]\[`empty folder`\](<https://www.dropbox.com/sh/r18pra0fhig85y2/AACkgpBpKWuO80waD2AeTBoUa?dl=1>)
 
-## SEM
+## Structural Equation Models example
 
 -   Download the files to replicate the commented
     [example](https://www.dropbox.com/sh/lggup1w5h0mp4k4/AADbDIzv-O5XgpPE2-eZfKUDa?dl=1),
     and the presented slides.
+
+## Authors
+
+Sandoval-Hernández, A., PhD, Univeristy of Bath  
+Carrasco, D., PhD, Centro de Medición MIDE UC  
+Miranda, D., PhD, Centro de Medición MIDE UC  
+Inostroza, P., Msc(c), KU Leuven
