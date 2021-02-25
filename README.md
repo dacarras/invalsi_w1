@@ -26,7 +26,7 @@
 ## Latent Class Models example
 
 -   Download presented examples
-    \[`to be updated soon`\]\[`empty folder`\](<https://www.dropbox.com/sh/r18pra0fhig85y2/AACkgpBpKWuO80waD2AeTBoUa?dl=1>)
+    [`empty folder`](https://www.dropbox.com/sh/r18pra0fhig85y2/AACkgpBpKWuO80waD2AeTBoUa?dl=1)
 
 ## Structural Equation Models example
 
