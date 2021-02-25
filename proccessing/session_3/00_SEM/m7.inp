@@ -1,0 +1,28 @@
+TITLE:
+SEM;
+DATA:
+FILE = "m7_f8e3dd7dc9de35d4350d48f4644ad423.dat";
+ 
+VARIABLE:
+NAMES = idschool_scr totwgts jkzones s_gender s_hisced actspray actblock actocup
+     acttalk actrep actmarch actsign votopre votomun votoinf ital; 
+ MISSING=.;
+  
+  cluster = idschool_scr;
+  Stratification = jkzones;
+  Weight = totwgts;
+ANALYSIS:
+type = complex;
+MODEL:
+
+   turnout BY votopre votomun votoinf;
+   leg BY acttalk actrep actmarch actsign;
+   ill BY actspray actblock actocup;
+   
+   turnout ON s_hisced s_gender ital ;
+   leg ON s_hisced s_gender ital;
+   ill ON s_hisced s_gender ital;
+   
+  
+OUTPUT:
+CINTERVAL sampstat mod stdyx;

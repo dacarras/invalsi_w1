@@ -1,0 +1,23 @@
+TITLE:
+CFA;
+DATA:
+FILE = "m4_aa695dd1a4ce4e5cf60735b5179bb330.dat";
+ 
+VARIABLE:
+NAMES = idschool_scr totwgts jkzones actspray actblock actocup acttalk actrep
+     actmarch actsign votopre votomun votoinf; 
+ MISSING=.;
+  
+  cluster = idschool_scr;
+  Stratification = jkzones;
+  Weight = totwgts;
+ANALYSIS:
+type = complex;
+MODEL:
+
+   turnout BY votopre votomun votoinf;
+   leg BY acttalk actrep actmarch actsign;
+   ill BY actspray actblock actocup;
+  
+OUTPUT:
+CINTERVAL sampstat mod stdyx;
