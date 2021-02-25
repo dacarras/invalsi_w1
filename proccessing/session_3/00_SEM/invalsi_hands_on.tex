@@ -1,0 +1,364 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Invalsi\_Workshop: Hands on!},
+  pdfauthor={Daniel Miranda},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{Invalsi\_Workshop: Hands on!}
+\author{Daniel Miranda}
+\date{25-02-2021}
+
+\begin{document}
+\maketitle
+
+\hypertarget{read-data}{%
+\subsection{Read data}\label{read-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pacman}\OperatorTok{::}\KeywordTok{p_load}\NormalTok{(dplyr, stargazer, skimr, xaringan, srvyr, lme4, broom, texreg, scales, plotly, desctable, descriptr, forcats, GGally, MplusAutomation, semPlot, corrplot)}
+
+
+\KeywordTok{load}\NormalTok{(}\StringTok{"./data/mergeita16.Rdata"}\NormalTok{)}
+\KeywordTok{names}\NormalTok{(mergeita16)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "idcntry"      "country"      "idschool_scr" "idclass_scr"  "idstud_scr"  
+##  [6] "sidi_invalsi" "totwgts"      "wgtfac1"      "wgtadj1s"     "wgtfac2s"    
+## [11] "wgtadj2s"     "wgtadj3s"     "jkzones"      "jkreps"       "pv1civ"      
+## [16] "pv2civ"       "pv3civ"       "pv4civ"       "pv5civ"       "s_gender"    
+## [21] "s_cntatt"     "s_abuse"      "s_civlrn"     "s_geneql"     "s_ethrght"   
+## [26] "univ"         "s_poldisc"    "s_hisced"     "s_homlit"     "s_immig"     
+## [31] "s_sint"       "s_citcon"     "s_citeff"     "s_citresp"    "s_citsoc"    
+## [36] "s_opdisc"     "s_socmed"     "s_intrust"    "formal"       "activ"       
+## [41] "illegal"      "s_elecpart"   "s_polpart"    "s_compart"    "s_schpart"   
+## [46] "s_legact"     "s_illact"     "actspray"     "actblock"     "actocup"     
+## [51] "acttalk"      "actrep"       "actmarch"     "actsign"      "votopre"     
+## [56] "votomun"      "votoinf"      "wle_ita"      "wle_ita_200"  "ital"        
+## [61] "prov"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{desc=}\StringTok{ }\NormalTok{mergeita16 }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(actspray, actblock, actocup, acttalk, actrep, actmarch, actsign, votopre, votomun, votoinf)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{stargazer}\NormalTok{(desc, }\DataTypeTok{type =} \StringTok{"latex"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard
+University. E-mail: hlavac at fas.harvard.edu \% Date and time: jue.,
+feb. 25, 2021 - 1:47:47
+
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Pctl(25)} & \multicolumn{1}{c}{Pctl(75)} & \multicolumn{1}{c}{Max} \\ 
+\hline \\[-1.8ex] 
+actspray & 3,373 & 1.746 & 0.925 & 1.000 & 1.000 & 2.000 & 4.000 \\ 
+actblock & 3,376 & 1.646 & 0.832 & 1.000 & 1.000 & 2.000 & 4.000 \\ 
+actocup & 3,378 & 1.651 & 0.849 & 1.000 & 1.000 & 2.000 & 4.000 \\ 
+acttalk & 3,390 & 2.791 & 0.835 & 1.000 & 2.000 & 3.000 & 4.000 \\ 
+actrep & 3,369 & 2.207 & 0.750 & 1.000 & 2.000 & 3.000 & 4.000 \\ 
+actmarch & 3,359 & 2.557 & 0.826 & 1.000 & 2.000 & 3.000 & 4.000 \\ 
+actsign & 3,378 & 2.649 & 0.830 & 1.000 & 2.000 & 3.000 & 4.000 \\ 
+votopre & 3,386 & 3.525 & 0.705 & 1.000 & 3.000 & 4.000 & 4.000 \\ 
+votomun & 3,382 & 3.471 & 0.739 & 1.000 & 3.000 & 4.000 & 4.000 \\ 
+votoinf & 3,356 & 3.515 & 0.735 & 1.000 & 3.000 & 4.000 & 4.000 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table}
+
+\hypertarget{correlations}{%
+\subsection{Correlations}\label{correlations}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{corMat  <-}\StringTok{ }\KeywordTok{cor}\NormalTok{(desc, }\DataTypeTok{use =} \StringTok{"pairwise.complete.obs"}\NormalTok{)  }\CommentTok{# estimar matriz pearson}
+\KeywordTok{options}\NormalTok{(}\DataTypeTok{digits=}\DecValTok{3}\NormalTok{) }\CommentTok{# decimales}
+\CommentTok{#print(corMat)}
+
+\KeywordTok{stargazer}\NormalTok{(corMat, }\DataTypeTok{type =} \StringTok{"latex"}\NormalTok{) }\CommentTok{#Latex table}
+\end{Highlighting}
+\end{Shaded}
+
+\% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard
+University. E-mail: hlavac at fas.harvard.edu \% Date and time: jue.,
+feb. 25, 2021 - 1:47:47 \textbackslash begin\{table\}{[}!htbp{]}
+\centering 
+
+\caption{} 
+  \label{}
+
+\textbackslash begin\{tabular\}\{@\{\extracolsep{5pt}\} ccccccccccc\}
+\textbackslash{[}-1.8ex{]}\hline  \hline \textbackslash{[}-1.8ex{]} \&
+actspray \& actblock \& actocup \& acttalk \& actrep \& actmarch \&
+actsign \& votopre \& votomun \& votoinf \textbackslash{}
+\hline \textbackslash{[}-1.8ex{]} actspray \& \(1\) \& \(0.591\) \&
+\(0.571\) \& \(0.008\) \& \(0.120\) \& \(0.060\) \& \(0.077\) \&
+\[-$0.105$ & \]-\(0.150\) \& \[-$0.128$ \\ 
+actblock & $0.591$ & $1$ & $0.716$ & $0.060$ & $0.220$ & $0.146$ & $0.160$ & \]-\(0.069\)
+\& \[-$0.084$ & \]-\(0.106\) \textbackslash{} actocup \& \(0.571\) \&
+\(0.716\) \& \(1\) \& \(0.052\) \& \(0.193\) \& \(0.140\) \& \(0.156\)
+\& \[-$0.063$ & \]-\(0.085\) \& \[-$0.087$ \\ 
+acttalk & $0.008$ & $0.060$ & $0.052$ & $1$ & $0.476$ & $0.279$ & $0.348$ & $0.268$ & $0.242$ & $0.216$ \\ 
+actrep & $0.120$ & $0.220$ & $0.193$ & $0.476$ & $1$ & $0.320$ & $0.350$ & $0.168$ & $0.157$ & $0.113$ \\ 
+actmarch & $0.060$ & $0.146$ & $0.140$ & $0.279$ & $0.320$ & $1$ & $0.487$ & $0.190$ & $0.185$ & $0.207$ \\ 
+actsign & $0.077$ & $0.160$ & $0.156$ & $0.348$ & $0.350$ & $0.487$ & $1$ & $0.209$ & $0.205$ & $0.205$ \\ 
+votopre & \]-\(0.105\) \& \[-$0.069$ & \]-\(0.063\) \& \(0.268\) \&
+\(0.168\) \& \(0.190\) \& \(0.209\) \& \(1\) \& \(0.756\) \& \(0.517\)
+\textbackslash{} votomun \& \[-$0.150$ & \]-\(0.084\) \&
+\[-$0.085$ & $0.242$ & $0.157$ & $0.185$ & $0.205$ & $0.756$ & $1$ & $0.550$ \\ 
+votoinf & \]-\(0.128\) \& \[-$0.106$ & \]-\(0.087\) \& \(0.216\) \&
+\(0.113\) \& \(0.207\) \& \(0.205\) \& \(0.517\) \& \(0.550\) \& \(1\)
+\textbackslash{} \hline \textbackslash{[}-1.8ex{]}
+\textbackslash end\{tabular\} \textbackslash end\{table\}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{corrplot}\NormalTok{(corMat, }\DataTypeTok{type=}\StringTok{"lower"}\NormalTok{,}
+         \DataTypeTok{order=}\StringTok{"AOE"}\NormalTok{, }\DataTypeTok{cl.pos=}\StringTok{"b"}\NormalTok{, }\DataTypeTok{tl.pos=}\StringTok{"d"}\NormalTok{) }\CommentTok{#agrega nombres en diag.}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{invalsi_hands_on_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\hypertarget{model-specification-and-estimation}{%
+\subsection{Model specification and
+estimation}\label{model-specification-and-estimation}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{semPaths}\NormalTok{(}\StringTok{"./m4.out"}\NormalTok{, }\DataTypeTok{intercepts =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{rotation=}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Reading model:  ./m4.out
+\end{verbatim}
+
+\includegraphics{invalsi_hands_on_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m4 <-}\StringTok{ }\KeywordTok{mplusObject}\NormalTok{(}
+  \DataTypeTok{TITLE =} \StringTok{"CFA;"}\NormalTok{,}
+  \DataTypeTok{VARIABLE=}\StringTok{" }
+\StringTok{  cluster = idschool_scr;}
+\StringTok{  Stratification = jkzones;}
+\StringTok{  Weight = totwgts;"}\NormalTok{,}
+  \DataTypeTok{ANALYSIS=}
+    \StringTok{"type = complex;"}\NormalTok{,}
+  
+  \DataTypeTok{MODEL =} \StringTok{"}
+\StringTok{   turnout BY votopre votomun votoinf;}
+\StringTok{   leg BY acttalk actrep actmarch actsign;}
+\StringTok{   ill BY actspray actblock actocup;}
+\StringTok{  "}
+\NormalTok{  ,}
+  \DataTypeTok{OUTPUT =} \StringTok{"CINTERVAL sampstat mod stdyx;"}\NormalTok{,}
+  \DataTypeTok{rdata =}\NormalTok{ mergeita16)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## R variables selected automatically as any variable name that
+## occurs in the MODEL, VARIABLE, or DEFINE section.
+\end{verbatim}
+
+\begin{verbatim}
+## If any issues, suggest explicitly specifying USEVARIABLES.
+## A starting point may be:
+## USEVARIABLES = idschool_scr totwgts jkzones actspray actblock actocup acttalk actrep actmarch actsign votopre votomun votoinf;
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fit4 <-}\StringTok{ }\KeywordTok{mplusModeler}\NormalTok{(m4, }\DataTypeTok{modelout =} \StringTok{"m4.inp"}\NormalTok{, }\DataTypeTok{run =}\NormalTok{ 1L)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Wrote model to: m4.inp
+\end{verbatim}
+
+\begin{verbatim}
+## File(s) with md5 hash matching data found, using 
+## m4_aa695dd1a4ce4e5cf60735b5179bb330.dat
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Running model: m4.inp 
+## System command: C:\Windows\system32\cmd.exe /c cd "." && "Mplus" "m4.inp" 
+## Reading model:  m4.out
+\end{verbatim}
+
+\hypertarget{model-results-cfa}{%
+\subsection{Model results: CFA}\label{model-results-cfa}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{screenreg}\NormalTok{(fit4, }\DataTypeTok{type =} \StringTok{'stdyx'}\NormalTok{, }\DataTypeTok{summaries =} \KeywordTok{c}\NormalTok{(}\StringTok{"ChiSqM_Value"}\NormalTok{, }\StringTok{"ChiSqM_PValue"}\NormalTok{, }\StringTok{"CFI"}\NormalTok{, }\StringTok{"TLI"}\NormalTok{, }\StringTok{"RMSEA_Estimate"}\NormalTok{, }\StringTok{"Observations"}\NormalTok{), }\DataTypeTok{digits =} \DecValTok{3}\NormalTok{, }\DataTypeTok{single.row=}\OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## ===========================================
+##                        Model 1             
+## -------------------------------------------
+##  VOTOPRE<-TURNOUT         0.845 (0.013) ***
+##  VOTOMUN<-TURNOUT         0.892 (0.011) ***
+##  VOTOINF<-TURNOUT         0.616 (0.018) ***
+##  ACTTALK<-LEG             0.596 (0.022) ***
+##  ACTREP<-LEG              0.616 (0.020) ***
+##  ACTMARCH<-LEG            0.593 (0.022) ***
+##  ACTSIGN<-LEG             0.655 (0.019) ***
+##  ACTSPRAY<-ILL            0.690 (0.016) ***
+##  ACTBLOCK<-ILL            0.864 (0.014) ***
+##  ACTOCUP<-ILL             0.830 (0.014) ***
+##  LEG<->TURNOUT            0.383 (0.023) ***
+##  ILL<->TURNOUT           -0.128 (0.024) ***
+##  ILL<->LEG                0.262 (0.028) ***
+##  ACTSPRAY<-Intercepts     1.882 (0.018) ***
+##  ACTBLOCK<-Intercepts     1.977 (0.021) ***
+##  ACTOCUP<-Intercepts      1.947 (0.018) ***
+##  ACTTALK<-Intercepts      3.335 (0.049) ***
+##  ACTREP<-Intercepts       2.936 (0.038) ***
+##  ACTMARCH<-Intercepts     3.089 (0.038) ***
+##  ACTSIGN<-Intercepts      3.191 (0.039) ***
+##  VOTOPRE<-Intercepts      4.961 (0.110) ***
+##  VOTOMUN<-Intercepts      4.682 (0.085) ***
+##  VOTOINF<-Intercepts      4.764 (0.111) ***
+##  TURNOUT<->TURNOUT        1.000 (0.000)    
+##  LEG<->LEG                1.000 (0.000)    
+##  ILL<->ILL                1.000 (0.000)    
+##  ACTSPRAY<->ACTSPRAY      0.525 (0.022) ***
+##  ACTBLOCK<->ACTBLOCK      0.254 (0.024) ***
+##  ACTOCUP<->ACTOCUP        0.311 (0.023) ***
+##  ACTTALK<->ACTTALK        0.644 (0.026) ***
+##  ACTREP<->ACTREP          0.620 (0.024) ***
+##  ACTMARCH<->ACTMARCH      0.648 (0.026) ***
+##  ACTSIGN<->ACTSIGN        0.571 (0.025) ***
+##  VOTOPRE<->VOTOPRE        0.286 (0.022) ***
+##  VOTOMUN<->VOTOMUN        0.204 (0.020) ***
+##  VOTOINF<->VOTOINF        0.620 (0.022) ***
+## -------------------------------------------
+## ChiSqM_Value            407.838            
+## ChiSqM_PValue             0.000            
+## CFI                       0.950            
+## TLI                       0.930            
+## RMSEA_Estimate            0.059            
+## Observations           3406                
+## ===========================================
+## *** p < 0.001, ** p < 0.01, * p < 0.05
+\end{verbatim}
+
+\end{document}

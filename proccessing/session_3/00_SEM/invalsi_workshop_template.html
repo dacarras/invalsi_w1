@@ -35,13 +35,13 @@ background-size: 10%, 10%
 &lt;br&gt;
 
 .line_space_05[
-.text_100[Sandoval-Hernández, A., PhD] .text_70[ash22@bath.ac.uk]
+.text_100[Sandoval-Hernández, A., PhD.] .text_70[University of Bath]
 
-.text_100[Carrasco, D., PhD] .text_70[dacarras@uc.cl]
+.text_100[Carrasco, D., PhD.] .text_70[Centro de Medición MIDE UC]
 
-.text_100[Miranda, D., PhD] .text_70[damiran1@uc.l]
+.text_100[Miranda, D., PhD.] .text_70[Centro de Medición MIDE UC]
 
-.text_100[Inostroza, P., Msc(c)] .text_70[xxxxx@xxx.l]
+.text_100[Inostroza, P., Msc(c).] .text_70[KU Leuven]
 
 &lt;br&gt;
 
@@ -81,7 +81,7 @@ class: center, middle, inverse
 ---
 ## Measurement in social sciences
 
-- A hughe number of constructs, conceptos, and attributes are considered as latent 
+- A hughe number of constructs, concepts, and attributes are considered as latent 
 
 - The less measurement error, the better instrument
 
@@ -95,7 +95,6 @@ class: center, middle, inverse
 
 ---
 ## Latent variables
-
 
 - Indirectly observed: hipothetical
 
@@ -113,52 +112,52 @@ $$ \sigma^{2}_x = \sigma^{2}_t +  \sigma^{2}_e$$
 
 - Existence of multiple indicators allows to differentiate:
 
-common variance `$$\sigma^{2}_t$$` and unique variance `$$\sigma^{2}_t$$`
-
+common variance `$$\sigma^{2}_t$$` and unique variance `$$\sigma^{2}_e$$`
 
 ---
 ## Factor Analysis
 
-- Conjunto de métodos para explicar correlaciones entre variables interpretables como variables latentes o factores
+- Set of methods oriented to explain the correlation among variables which could be interpreted as latent variables or factors
 
-- La existencia de un factor común explicaría la asociación entre indicadores
+- The existence of a common factor explain the association among indicators
 
-- Dependencia condicional: las correlaciones serían 0 si se parcializa el factor.
+- Conditional dependency: the correlations would be 0 if partialize the factor. 
+
 
 ---
 ## Purpose
 
-- Reducir complejidad e incrementar la comprensión
+- To reduce complexity and increse comprehension
 
-- Validar una escala en términos del constructo que mide
+- To validate scales in terms of the measured construct
 
-- Separar varianza única de varianza común
+- To separate the common variance from unique variance 
 
 
 ---
-## General fundaments
+## General fuoundations
 
-- Covarianza, correlación y correlación parcial
+- Covariance, correlation and partial correlation
 
-- Regresión simple y múltiple
+- Simple and multiple regression
 
-- En general, se pueden considerar los mismos supuestos de regresión líneal
+- In general, could consider similar assumptions than in linear regression
 
 ---
 ## Assumptions 
 
-- Nivel de medición intervalar 
+- Intervalar measurment level
 
-- Normalidad de las mediciones (multivariada)
+- Normality
 
-- Relación líneal entre variables
+- Linear relationship among variables
 
-- Correlaciones deben tener cierto nivel para su agrupación
+- Correlations must have certain level for its agrupation
 
-- Tamaño muestral: &gt;200 casos o entre 5-10 casos por variable
+- Sample size: &gt;200 cases or between 5-10 for each variable (rule of thumb)
 
 ---
-## Diagrams of for represent
+## Diagrams for representation
 
 &lt;img src="./files/diagrams.png" width="60%" style="display: block; margin: auto;" /&gt;
 
@@ -167,15 +166,14 @@ common variance `$$\sigma^{2}_t$$` and unique variance `$$\sigma^{2}_t$$`
 
 &lt;img src="./files/growth2.png" width="60%" style="display: block; margin: auto;" /&gt;
 
-
 ---
 ## Three methods for measurement evaluations
 
-- Principal component analyses: Definición de componente a partir de una combinación líneal de variables
+- Principal component analyses: definition of component from a linear combination of variables
 
-- Exploratory factor analyses: técnica descriptiva que permite determinar un número apropiado de factores latentes a un set de indicadores, separando varianza común de varianza única
+- Exploratory factor analyses: descriptive thecnique which allow to determine a number of latent factors from a set of indicators, separating common and unique variance
 
-- **Confirmatory Factor Analyses**: técnica que permite hipotetizar (y confirmar) una variable latente, especifícando una serie de parámetros 
+- **Confirmatory Factor Analyses**: techinque which allow hipothetize (and confirm) a latent variable, specifing a set of parameters
 
 ---
 ## Three methods for measurement evaluations
@@ -243,6 +241,15 @@ class: center, middle, inverse
 ---
 ## Measurement model: Political participation using ICCS 2016 (Italy)
 
+- Fornal participation
+&lt;img src="./files/formal.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+## Measurement model: Political participation using ICCS 2016 (Italy)
+
+- Activist participation (legal and Illegal)
+&lt;img src="./files/activism.png" width="50%" style="display: block; margin: auto;" /&gt;
+
 
 
 ---
@@ -253,7 +260,26 @@ pacman::p_load(dplyr, stargazer, skimr, xaringan, srvyr, lme4, broom, texreg, sc
 
 
 load("./data/mergeita16.Rdata")
+names(mergeita16)
+```
 
+```
+ [1] "idcntry"      "country"      "idschool_scr" "idclass_scr"  "idstud_scr"  
+ [6] "sidi_invalsi" "totwgts"      "wgtfac1"      "wgtadj1s"     "wgtfac2s"    
+[11] "wgtadj2s"     "wgtadj3s"     "jkzones"      "jkreps"       "pv1civ"      
+[16] "pv2civ"       "pv3civ"       "pv4civ"       "pv5civ"       "s_gender"    
+[21] "s_cntatt"     "s_abuse"      "s_civlrn"     "s_geneql"     "s_ethrght"   
+[26] "univ"         "s_poldisc"    "s_hisced"     "s_homlit"     "s_immig"     
+[31] "s_sint"       "s_citcon"     "s_citeff"     "s_citresp"    "s_citsoc"    
+[36] "s_opdisc"     "s_socmed"     "s_intrust"    "formal"       "activ"       
+[41] "illegal"      "s_elecpart"   "s_polpart"    "s_compart"    "s_schpart"   
+[46] "s_legact"     "s_illact"     "actspray"     "actblock"     "actocup"     
+[51] "acttalk"      "actrep"       "actmarch"     "actsign"      "votopre"     
+[56] "votomun"      "votoinf"      "wle_ita"      "wle_ita_200"  "ital"        
+[61] "prov"        
+```
+
+```r
 desc= mergeita16 %&gt;%
   select(actspray, actblock, actocup, acttalk, actrep, actmarch, actsign, votopre, votomun, votoinf)
 stargazer(desc,title="Descriptive Statistics", type = "text")
@@ -388,12 +414,162 @@ fit4 &lt;- mplusModeler(m4, modelout = "m4.inp", run = 1L)
 ---
 ## Model specification
 
+- Mplus Syntax
+
+
+```r
+TITLE: CFA;
+DATA:
+FILE = "m4_aa695dd1a4ce4e5cf60735b5179bb330.dat";
+ 
+VARIABLE:
+NAMES = idschool_scr totwgts jkzones actspray actblock actocup acttalk actrep
+     actmarch actsign votopre votomun votoinf; 
+ MISSING=.;
+  
+  cluster = idschool_scr;
+  Stratification = jkzones;
+  Weight = totwgts;
+     
+ANALYSIS:
+type = complex;
+     
+MODEL:
+
+   turnout BY votopre votomun votoinf;
+   leg BY acttalk actrep actmarch actsign;
+   ill BY actspray actblock actocup;
+  
+OUTPUT:
+CINTERVAL sampstat mod stdyx;
+```
+
+
+---
+## Model specification
+
 ```r
 semPaths("./m4.out", intercepts = FALSE, rotation=2)
 ```
 
 &lt;img src="./files/plotmodel1.png" width="60%" style="display: block; margin: auto;" /&gt;
 
+
+---
+## Model results
+
+```r
+ UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     ACTSPRAY              1.750       1.016       1.000   52.24%       1.000      1.000      1.000
+            3373.000       0.865      -0.030       4.000    6.52%       2.000      3.000
+     ACTBLOCK              1.649       1.212       1.000   54.03%       1.000      1.000      1.000
+            3376.000       0.696       0.785       4.000    4.56%       2.000      2.000
+     ACTOCUP               1.651       1.198       1.000   54.77%       1.000      1.000      1.000
+            3378.000       0.719       0.653       4.000    4.77%       2.000      2.000
+     ACTTALK               2.786      -0.301       1.000    6.96%       2.000      3.000      3.000
+            3390.000       0.698      -0.458       4.000   19.62%       3.000      3.000
+     ACTREP                2.207       0.320       1.000   15.11%       2.000      2.000      2.000
+            3369.000       0.564      -0.098       4.000    4.81%       2.000      3.000
+     ACTMARCH              2.553      -0.016       1.000    9.32%       2.000      2.000      3.000
+            3359.000       0.683      -0.550       4.000   12.44%       3.000      3.000
+     ACTSIGN               2.649      -0.165       1.000    8.56%       2.000      2.000      3.000
+            3378.000       0.688      -0.514       4.000   14.48%       3.000      3.000
+     VOTOPRE               3.519      -1.535       1.000    2.30%       3.000      4.000      4.000
+            3386.000       0.503       2.185       4.000   62.64%       4.000      4.000
+     VOTOMUN               3.466      -1.364       1.000    2.54%       3.000      3.000      4.000
+            3382.000       0.548       1.466       4.000   59.40%       4.000      4.000
+     VOTOINF               3.511      -1.515       1.000    2.50%       3.000      4.000      4.000
+            3356.000       0.542       1.853       4.000   63.50%       4.000      4.000
+```
+
+---
+## Model results: fit indexes
+
+
+
+```r
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       33
+
+Chi-Square Test of Model Fit
+
+          Value                            407.838*
+          Degrees of Freedom                    32
+          P-Value                           0.0000
+          Scaling Correction Factor         1.3241
+            for MLR
+[...]
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.059
+          90 Percent C.I.                    0.054  0.064
+          Probability RMSEA &lt;= .05           0.002
+
+CFI/TLI
+
+          CFI                                0.950
+          TLI                                0.930
+[...]
+```
+
+
+
+---
+## Model results: Standardized results
+
+
+```r
+STANDARDIZED MODEL RESULTS
+STDYX Standardization
+                                                   Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ TURNOUT  BY
+    VOTOPRE            0.845      0.013     65.202      0.000
+    VOTOMUN            0.892      0.011     77.958      0.000
+    VOTOINF            0.616      0.018     34.180      0.000
+
+ LEG      BY
+    ACTTALK            0.596      0.022     26.934      0.000
+    ACTREP             0.616      0.020     31.239      0.000
+    ACTMARCH           0.593      0.022     26.918      0.000
+    ACTSIGN            0.655      0.019     34.851      0.000
+
+ ILL      BY
+    ACTSPRAY           0.690      0.016     44.106      0.000
+    ACTBLOCK           0.864      0.014     62.117      0.000
+    ACTOCUP            0.830      0.014     59.268      0.000
+
+ LEG      WITH
+    TURNOUT            0.383      0.023     16.715      0.000
+
+ ILL      WITH
+    TURNOUT           -0.128      0.024     -5.317      0.000
+    LEG                0.262      0.028      9.437      0.000
+[...]
+
+R-SQUARE
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    ACTSPRAY           0.475      0.022     22.053      0.000
+    ACTBLOCK           0.746      0.024     31.059      0.000
+    ACTOCUP            0.689      0.023     29.634      0.000
+    ACTTALK            0.356      0.026     13.467      0.000
+    ACTREP             0.380      0.024     15.619      0.000
+    ACTMARCH           0.352      0.026     13.459      0.000
+    ACTSIGN            0.429      0.025     17.425      0.000
+    VOTOPRE            0.714      0.022     32.601      0.000
+    VOTOMUN            0.796      0.020     38.979      0.000
+    VOTOINF            0.380      0.022     17.090      0.000
+```
 
 ---
 ## Model results
@@ -409,6 +585,8 @@ screenreg(fit4, type = 'stdyx', summaries = c("ChiSqM_Value", "ChiSqM_PValue", "
 class: center, middle, inverse
 
 # SEM example
+
+&lt;img src="./files/semfull.png" width="60%" style="display: block; margin: auto;" /&gt;
 ---
 ## SEM model: Political participation using ICCS 2016 (Italy)
 
@@ -439,6 +617,8 @@ m7 &lt;- mplusObject(
    leg ON s_hisced s_gender ital;
    ill ON s_hisced s_gender ital;
    
+   
+   
   "
   ,
   OUTPUT = "CINTERVAL sampstat mod stdyx;",
@@ -463,6 +643,27 @@ screenreg(fit7, type = 'stdyx', summaries = c("ChiSqM_Value", "ChiSqM_PValue", "
 ```
 
 &lt;img src="./files/modelfull.png" width="20%" style="display: block; margin: auto;" /&gt;
+
+---
+## Some extensions
+
+### CFA
+
+- Constrains equivalences
+
+- Measurement Invariance or equivalence
+
+- Measurement model with categorical indicators
+
+
+### SEM
+
+- Mediation modeling 
+
+- Multilevel SEM
+
+- Longitudinal modeling (Crosslagged or Latent Growth Modeling)
+
 ---
 
 class: title-slide, middle, center
@@ -477,24 +678,28 @@ background-size: 10%, 10%
 
 .line_space_07[
 ## Muchas Gracias!
+## Grazie Mille!
 ]
 &lt;br&gt;
 
 .line_space_05[
-.text_100[Sandoval-Hernández, A., PhD] .text_70[ash22@bath.ac.uk]
+.text_100[Sandoval-Hernández, A., PhD]
+.text_70[ash22@bath.ac.uk]
 
-.text_100[Carrasco, D., PhD] .text_70[dacarras@uc.cl]
+.text_100[Carrasco, D., PhD]
+.text_70[dacarras@uc.cl]
 
-.text_100[Miranda, D., PhD] .text_70[damiran1@uc.l]
+.text_100[Miranda, D., PhD]
+.text_70[damiran1@uc.l]
 
-.text_100[Inostroza, P., Msc(c)] .text_70[xxxxx@xxx.l]
+.text_100[Inostroza, P., Msc(c)]
+.text_70[inostroza.f.pamela@gmail.com]
 
 &lt;br&gt;
 
 .text_70[V Seminar: “INVALSI data: a tool for teaching and scientific research”]
 
 .text_70[ROME,  February 25th – 28th, 2021]
-
 ]
 
 &lt;br&gt;

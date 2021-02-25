@@ -1,0 +1,1090 @@
+Mplus VERSION 7.4
+MUTHEN & MUTHEN
+02/25/2021   1:59 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+  SEM;
+  DATA:
+  FILE = "m7_f8e3dd7dc9de35d4350d48f4644ad423.dat";
+
+  VARIABLE:
+  NAMES = idschool_scr totwgts jkzones s_gender s_hisced actspray actblock actocup
+       acttalk actrep actmarch actsign votopre votomun votoinf ital;
+   MISSING=.;
+
+    cluster = idschool_scr;
+    Stratification = jkzones;
+    Weight = totwgts;
+  ANALYSIS:
+  type = complex;
+  MODEL:
+
+     turnout BY votopre votomun votoinf;
+     leg BY acttalk actrep actmarch actsign;
+     ill BY actspray actblock actocup;
+
+     turnout ON s_hisced s_gender ital ;
+     leg ON s_hisced s_gender ital;
+     ill ON s_hisced s_gender ital;
+
+     s_hisced WITH  s_gender ital;
+     s_gender WITH ital;
+
+
+  OUTPUT:
+  CINTERVAL sampstat mod stdyx;
+
+
+
+*** WARNING
+  Data set contains unknown or missing values for GROUPING,
+  PATTERN, COHORT, CLUSTER and/or STRATIFICATION variables.
+  Number of cases with unknown or missing values:  304
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+
+SEM;
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        3440
+
+Number of dependent variables                                   10
+Number of independent variables                                  3
+Number of continuous latent variables                            3
+
+Observed dependent variables
+
+  Continuous
+   ACTSPRAY    ACTBLOCK    ACTOCUP     ACTTALK     ACTREP      ACTMARCH
+   ACTSIGN     VOTOPRE     VOTOMUN     VOTOINF
+
+Observed independent variables
+   S_GENDER    S_HISCED    ITAL
+
+Continuous latent variables
+   TURNOUT     LEG         ILL
+
+Variables with special functions
+
+  Stratification        JKZONES
+  Cluster variable      IDSCHOOL
+  Weight variable       TOTWGTS
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+
+Input data file(s)
+  m7_f8e3dd7dc9de35d4350d48f4644ad423.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            49
+     Number of strata                      75
+     Number of clusters                   170
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              ACTSPRAY      ACTBLOCK      ACTOCUP       ACTTALK       ACTREP
+              ________      ________      ________      ________      ________
+ ACTSPRAY       0.981
+ ACTBLOCK       0.978         0.981
+ ACTOCUP        0.978         0.980         0.982
+ ACTTALK        0.978         0.980         0.981         0.985
+ ACTREP         0.974         0.976         0.977         0.978         0.979
+ ACTMARCH       0.972         0.973         0.974         0.975         0.972
+ ACTSIGN        0.976         0.978         0.979         0.981         0.976
+ VOTOPRE        0.977         0.978         0.979         0.981         0.977
+ VOTOMUN        0.976         0.978         0.978         0.980         0.976
+ VOTOINF        0.969         0.970         0.971         0.973         0.968
+ S_GENDER       0.981         0.981         0.982         0.985         0.979
+ S_HISCED       0.967         0.968         0.969         0.972         0.966
+ ITAL           0.954         0.955         0.955         0.958         0.953
+
+
+           Covariance Coverage
+              ACTMARCH      ACTSIGN       VOTOPRE       VOTOMUN       VOTOINF
+              ________      ________      ________      ________      ________
+ ACTMARCH       0.976
+ ACTSIGN        0.974         0.982
+ VOTOPRE        0.974         0.978         0.984
+ VOTOMUN        0.973         0.977         0.983         0.983
+ VOTOINF        0.965         0.970         0.975         0.974         0.976
+ S_GENDER       0.976         0.982         0.984         0.983         0.976
+ S_HISCED       0.963         0.968         0.970         0.969         0.962
+ ITAL           0.950         0.955         0.958         0.957         0.949
+
+
+           Covariance Coverage
+              S_GENDER      S_HISCED      ITAL
+              ________      ________      ________
+ S_GENDER       1.000
+ S_HISCED       0.985         0.985
+ ITAL           0.972         0.957         0.972
+
+
+SAMPLE STATISTICS
+
+
+     ESTIMATED SAMPLE STATISTICS
+
+
+           Means
+              ACTSPRAY      ACTBLOCK      ACTOCUP       ACTTALK       ACTREP
+              ________      ________      ________      ________      ________
+      1         1.753         1.651         1.653         2.784         2.206
+
+
+           Means
+              ACTMARCH      ACTSIGN       VOTOPRE       VOTOMUN       VOTOINF
+              ________      ________      ________      ________      ________
+      1         2.553         2.648         3.517         3.464         3.507
+
+
+           Means
+              S_GENDER      S_HISCED      ITAL
+              ________      ________      ________
+      1         0.482         2.330       200.695
+
+
+           Covariances
+              ACTSPRAY      ACTBLOCK      ACTOCUP       ACTTALK       ACTREP
+              ________      ________      ________      ________      ________
+ ACTSPRAY       0.866
+ ACTBLOCK       0.462         0.696
+ ACTOCUP        0.453         0.508         0.720
+ ACTTALK        0.010         0.041         0.039         0.698
+ ACTREP         0.091         0.139         0.127         0.301         0.565
+ ACTMARCH       0.048         0.102         0.101         0.194         0.198
+ ACTSIGN        0.060         0.109         0.112         0.243         0.219
+ VOTOPRE       -0.069        -0.041        -0.037         0.159         0.088
+ VOTOMUN       -0.104        -0.052        -0.054         0.151         0.086
+ VOTOINF       -0.090        -0.068        -0.058         0.134         0.058
+ S_GENDER      -0.037        -0.022        -0.028         0.022        -0.027
+ S_HISCED      -0.047        -0.034        -0.012         0.086         0.042
+ ITAL          -5.741        -6.236        -5.098         4.353        -1.127
+
+
+           Covariances
+              ACTMARCH      ACTSIGN       VOTOPRE       VOTOMUN       VOTOINF
+              ________      ________      ________      ________      ________
+ ACTMARCH       0.683
+ ACTSIGN        0.334         0.689
+ VOTOPRE        0.109         0.124         0.503
+ VOTOMUN        0.113         0.126         0.397         0.548
+ VOTOINF        0.127         0.128         0.266         0.300         0.543
+ S_GENDER       0.046         0.040         0.006         0.004         0.030
+ S_HISCED       0.016         0.010         0.063         0.087         0.085
+ ITAL           1.074         1.952         5.197         6.709         8.366
+
+
+           Covariances
+              S_GENDER      S_HISCED      ITAL
+              ________      ________      ________
+ S_GENDER       0.250
+ S_HISCED      -0.020         1.061
+ ITAL           2.953         7.800      1562.653
+
+
+           Correlations
+              ACTSPRAY      ACTBLOCK      ACTOCUP       ACTTALK       ACTREP
+              ________      ________      ________      ________      ________
+ ACTSPRAY       1.000
+ ACTBLOCK       0.596         1.000
+ ACTOCUP        0.573         0.717         1.000
+ ACTTALK        0.013         0.059         0.055         1.000
+ ACTREP         0.129         0.222         0.198         0.480         1.000
+ ACTMARCH       0.062         0.148         0.144         0.282         0.319
+ ACTSIGN        0.078         0.157         0.160         0.351         0.350
+ VOTOPRE       -0.104        -0.069        -0.061         0.269         0.166
+ VOTOMUN       -0.151        -0.084        -0.085         0.243         0.154
+ VOTOINF       -0.131        -0.110        -0.093         0.218         0.105
+ S_GENDER      -0.079        -0.054        -0.065         0.052        -0.072
+ S_HISCED      -0.049        -0.040        -0.014         0.100         0.055
+ ITAL          -0.156        -0.189        -0.152         0.132        -0.038
+
+
+           Correlations
+              ACTMARCH      ACTSIGN       VOTOPRE       VOTOMUN       VOTOINF
+              ________      ________      ________      ________      ________
+ ACTMARCH       1.000
+ ACTSIGN        0.487         1.000
+ VOTOPRE        0.185         0.211         1.000
+ VOTOMUN        0.185         0.205         0.757         1.000
+ VOTOINF        0.209         0.210         0.510         0.550         1.000
+ S_GENDER       0.111         0.096         0.018         0.011         0.080
+ S_HISCED       0.019         0.012         0.087         0.114         0.112
+ ITAL           0.033         0.059         0.185         0.229         0.287
+
+
+           Correlations
+              S_GENDER      S_HISCED      ITAL
+              ________      ________      ________
+ S_GENDER       1.000
+ S_HISCED      -0.039         1.000
+ ITAL           0.150         0.192         1.000
+
+
+     MAXIMUM LOG-LIKELIHOOD VALUE FOR THE UNRESTRICTED (H1) MODEL IS -58583.713
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     ACTSPRAY              1.750       1.016       1.000   52.24%       1.000      1.000      1.000
+            3373.000       0.865      -0.030       4.000    6.52%       2.000      3.000
+     ACTBLOCK              1.649       1.212       1.000   54.03%       1.000      1.000      1.000
+            3376.000       0.696       0.785       4.000    4.56%       2.000      2.000
+     ACTOCUP               1.651       1.198       1.000   54.77%       1.000      1.000      1.000
+            3378.000       0.719       0.653       4.000    4.77%       2.000      2.000
+     ACTTALK               2.786      -0.301       1.000    6.96%       2.000      3.000      3.000
+            3390.000       0.698      -0.458       4.000   19.62%       3.000      3.000
+     ACTREP                2.207       0.320       1.000   15.11%       2.000      2.000      2.000
+            3369.000       0.564      -0.098       4.000    4.81%       2.000      3.000
+     ACTMARCH              2.553      -0.016       1.000    9.32%       2.000      2.000      3.000
+            3359.000       0.683      -0.550       4.000   12.44%       3.000      3.000
+     ACTSIGN               2.649      -0.165       1.000    8.56%       2.000      2.000      3.000
+            3378.000       0.688      -0.514       4.000   14.48%       3.000      3.000
+     VOTOPRE               3.519      -1.535       1.000    2.30%       3.000      4.000      4.000
+            3386.000       0.503       2.185       4.000   62.64%       4.000      4.000
+     VOTOMUN               3.466      -1.364       1.000    2.54%       3.000      3.000      4.000
+            3382.000       0.548       1.466       4.000   59.40%       4.000      4.000
+     VOTOINF               3.511      -1.515       1.000    2.50%       3.000      4.000      4.000
+            3356.000       0.542       1.853       4.000   63.50%       4.000      4.000
+     S_GENDER              0.482       0.071       0.000   51.60%       0.000      0.000      0.000
+            3440.000       0.250      -1.995       1.000   48.40%       1.000      1.000
+     S_HISCED              2.332       0.285       0.000    1.12%       2.000      2.000      2.000
+            3388.000       1.061      -0.804       4.000   19.69%       2.000      3.000
+     ITAL                200.946       0.071      54.949    0.03%     167.847    192.564    201.225
+            3343.000    1557.941       0.164     326.241    0.51%     210.340    236.770
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+     THE STANDARD ERRORS OF THE MODEL PARAMETER ESTIMATES MAY NOT BE
+     TRUSTWORTHY FOR SOME PARAMETERS DUE TO A NON-POSITIVE DEFINITE
+     FIRST-ORDER DERIVATIVE PRODUCT MATRIX.  THIS MAY BE DUE TO THE STARTING
+     VALUES BUT MAY ALSO BE AN INDICATION OF MODEL NONIDENTIFICATION.  THE
+     CONDITION NUMBER IS       0.189D-20.  PROBLEM INVOLVING THE FOLLOWING PARAMETER:
+     Parameter 51, ITAL
+
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       51
+
+Loglikelihood
+
+          H0 Value                      -58987.749
+          H0 Scaling Correction Factor      1.6839
+            for MLR
+          H1 Value                      -58583.713
+          H1 Scaling Correction Factor      1.4634
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                  118077.498
+          Bayesian (BIC)                118390.803
+          Sample-Size Adjusted BIC      118228.752
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                            645.882*
+          Degrees of Freedom                    53
+          P-Value                           0.0000
+          Scaling Correction Factor         1.2511
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.057
+          90 Percent C.I.                    0.053  0.061
+          Probability RMSEA <= .05           0.002
+
+CFI/TLI
+
+          CFI                                0.932
+          TLI                                0.904
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           8804.139
+          Degrees of Freedom                    75
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.042
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ TURNOUT  BY
+    VOTOPRE            1.000      0.000    999.000    999.000
+    VOTOMUN            1.109      0.027     41.163      0.000
+    VOTOINF            0.767      0.028     26.928      0.000
+
+ LEG      BY
+    ACTTALK            1.000      0.000    999.000    999.000
+    ACTREP             0.916      0.033     28.129      0.000
+    ACTMARCH           1.000      0.065     15.449      0.000
+    ACTSIGN            1.107      0.068     16.177      0.000
+
+ ILL      BY
+    ACTSPRAY           1.000      0.000    999.000    999.000
+    ACTBLOCK           1.126      0.034     33.458      0.000
+    ACTOCUP            1.094      0.038     28.738      0.000
+
+ TURNOUT  ON
+    S_HISCED           0.044      0.013      3.472      0.001
+    S_GENDER          -0.010      0.022     -0.441      0.659
+    ITAL               0.004      0.000     10.754      0.000
+
+ LEG      ON
+    S_HISCED           0.031      0.012      2.697      0.007
+    S_GENDER           0.073      0.022      3.413      0.001
+    ITAL               0.001      0.000      1.899      0.058
+
+ ILL      ON
+    S_HISCED          -0.002      0.012     -0.144      0.886
+    S_GENDER          -0.059      0.026     -2.276      0.023
+    ITAL              -0.003      0.000     -8.329      0.000
+
+ LEG      WITH
+    TURNOUT            0.106      0.009     12.231      0.000
+
+ ILL      WITH
+    TURNOUT           -0.029      0.009     -3.174      0.002
+    LEG                0.089      0.009      9.497      0.000
+
+ S_HISCED WITH
+    S_GENDER          -0.020      0.010     -2.122      0.034
+    ITAL               7.811      1.104      7.073      0.000
+
+ S_GENDER WITH
+    ITAL               2.963      0.413      7.173      0.000
+
+ Means
+    S_GENDER           0.482      0.008     56.956      0.000
+    S_HISCED           2.331      0.034     68.201      0.000
+    ITAL             200.746      1.313    152.846      0.000
+
+ Intercepts
+    ACTSPRAY           2.434      0.090     27.010      0.000
+    ACTBLOCK           2.417      0.090     27.001      0.000
+    ACTOCUP            2.399      0.084     28.484      0.000
+    ACTTALK            2.547      0.082     31.145      0.000
+    ACTREP             1.987      0.072     27.777      0.000
+    ACTMARCH           2.314      0.075     31.032      0.000
+    ACTSIGN            2.384      0.083     28.664      0.000
+    VOTOPRE            2.669      0.075     35.645      0.000
+    VOTOMUN            2.523      0.083     30.303      0.000
+    VOTOINF            2.858      0.064     44.362      0.000
+
+ Variances
+    S_GENDER           0.250      0.000    833.574      0.000
+    S_HISCED           1.061      0.029     36.375      0.000
+    ITAL            1560.485     54.812     28.470      0.000
+
+ Residual Variances
+    ACTSPRAY           0.454      0.018     25.178      0.000
+    ACTBLOCK           0.174      0.018      9.874      0.000
+    ACTOCUP            0.227      0.018     12.676      0.000
+    ACTTALK            0.452      0.021     21.240      0.000
+    ACTREP             0.358      0.015     23.761      0.000
+    ACTMARCH           0.437      0.020     22.031      0.000
+    ACTSIGN            0.387      0.017     23.120      0.000
+    VOTOPRE            0.147      0.011     13.163      0.000
+    VOTOMUN            0.110      0.011     10.324      0.000
+    VOTOINF            0.333      0.014     24.575      0.000
+    TURNOUT            0.330      0.018     18.041      0.000
+    LEG                0.242      0.020     12.393      0.000
+    ILL                0.394      0.023     16.786      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ TURNOUT  BY
+    VOTOPRE            0.841      0.013     65.815      0.000
+    VOTOMUN            0.894      0.011     82.716      0.000
+    VOTOINF            0.621      0.018     34.354      0.000
+
+ LEG      BY
+    ACTTALK            0.594      0.023     25.896      0.000
+    ACTREP             0.605      0.020     29.866      0.000
+    ACTMARCH           0.600      0.022     27.558      0.000
+    ACTSIGN            0.662      0.019     35.063      0.000
+
+ ILL      BY
+    ACTSPRAY           0.690      0.016     44.214      0.000
+    ACTBLOCK           0.866      0.014     63.073      0.000
+    ACTOCUP            0.828      0.014     59.271      0.000
+
+ TURNOUT  ON
+    S_HISCED           0.076      0.022      3.422      0.001
+    S_GENDER          -0.008      0.019     -0.441      0.659
+    ITAL               0.247      0.023     10.907      0.000
+
+ LEG      ON
+    S_HISCED           0.064      0.023      2.819      0.005
+    S_GENDER           0.074      0.022      3.431      0.001
+    ITAL               0.052      0.027      1.948      0.051
+
+ ILL      ON
+    S_HISCED          -0.003      0.020     -0.144      0.886
+    S_GENDER          -0.046      0.020     -2.282      0.022
+    ITAL              -0.199      0.020     -9.919      0.000
+
+ LEG      WITH
+    TURNOUT            0.376      0.022     16.878      0.000
+
+ ILL      WITH
+    TURNOUT           -0.080      0.025     -3.214      0.001
+    LEG                0.288      0.028     10.335      0.000
+
+ S_HISCED WITH
+    S_GENDER          -0.039      0.018     -2.124      0.034
+    ITAL               0.192      0.026      7.499      0.000
+
+ S_GENDER WITH
+    ITAL               0.150      0.021      7.209      0.000
+
+ Means
+    S_GENDER           0.965      0.016     58.971      0.000
+    S_HISCED           2.263      0.037     60.965      0.000
+    ITAL               5.082      0.092     55.312      0.000
+
+ Intercepts
+    ACTSPRAY           2.615      0.082     31.987      0.000
+    ACTBLOCK           2.897      0.095     30.426      0.000
+    ACTOCUP            2.827      0.090     31.290      0.000
+    ACTTALK            3.049      0.109     27.953      0.000
+    ACTREP             2.645      0.099     26.753      0.000
+    ACTMARCH           2.800      0.092     30.271      0.000
+    ACTSIGN            2.872      0.105     27.303      0.000
+    VOTOPRE            3.763      0.146     25.714      0.000
+    VOTOMUN            3.409      0.136     24.981      0.000
+    VOTOINF            3.880      0.139     27.850      0.000
+
+ Variances
+    S_GENDER           1.000      0.000    999.000    999.000
+    S_HISCED           1.000      0.000    999.000    999.000
+    ITAL               1.000      0.000    999.000    999.000
+
+ Residual Variances
+    ACTSPRAY           0.524      0.022     24.375      0.000
+    ACTBLOCK           0.250      0.024     10.506      0.000
+    ACTOCUP            0.315      0.023     13.614      0.000
+    ACTTALK            0.648      0.027     23.790      0.000
+    ACTREP             0.634      0.025     25.876      0.000
+    ACTMARCH           0.640      0.026     24.488      0.000
+    ACTSIGN            0.562      0.025     22.520      0.000
+    VOTOPRE            0.292      0.022     13.575      0.000
+    VOTOMUN            0.201      0.019     10.407      0.000
+    VOTOINF            0.614      0.022     27.341      0.000
+    TURNOUT            0.926      0.012     75.288      0.000
+    LEG                0.986      0.006    164.366      0.000
+    ILL                0.955      0.008    115.918      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    ACTSPRAY           0.476      0.022     22.107      0.000
+    ACTBLOCK           0.750      0.024     31.536      0.000
+    ACTOCUP            0.685      0.023     29.635      0.000
+    ACTTALK            0.352      0.027     12.948      0.000
+    ACTREP             0.366      0.025     14.933      0.000
+    ACTMARCH           0.360      0.026     13.779      0.000
+    ACTSIGN            0.438      0.025     17.531      0.000
+    VOTOPRE            0.708      0.022     32.907      0.000
+    VOTOMUN            0.799      0.019     41.358      0.000
+    VOTOINF            0.386      0.022     17.177      0.000
+
+     Latent                                         Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    TURNOUT            0.074      0.012      5.993      0.000
+    LEG                0.014      0.006      2.400      0.016
+    ILL                0.045      0.008      5.413      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.288E-07
+       (ratio of smallest to largest eigenvalue)
+
+
+CONFIDENCE INTERVALS OF MODEL RESULTS
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ TURNOUT  BY
+    VOTOPRE          1.000       1.000       1.000       1.000       1.000       1.000       1.000
+    VOTOMUN          1.039       1.056       1.064       1.109       1.153       1.162       1.178
+    VOTOINF          0.693       0.711       0.720       0.767       0.814       0.823       0.840
+
+ LEG      BY
+    ACTTALK          1.000       1.000       1.000       1.000       1.000       1.000       1.000
+    ACTREP           0.832       0.853       0.863       0.916       0.970       0.980       1.000
+    ACTMARCH         0.833       0.873       0.894       1.000       1.107       1.127       1.167
+    ACTSIGN          0.931       0.973       0.995       1.107       1.220       1.241       1.284
+
+ ILL      BY
+    ACTSPRAY         1.000       1.000       1.000       1.000       1.000       1.000       1.000
+    ACTBLOCK         1.039       1.060       1.070       1.126       1.181       1.192       1.212
+    ACTOCUP          0.996       1.020       1.032       1.094       1.157       1.169       1.192
+
+ TURNOUT  ON
+    S_HISCED         0.011       0.019       0.023       0.044       0.065       0.069       0.077
+    S_GENDER        -0.067      -0.053      -0.046      -0.010       0.027       0.034       0.047
+    ITAL             0.003       0.003       0.003       0.004       0.004       0.004       0.005
+
+ LEG      ON
+    S_HISCED         0.001       0.008       0.012       0.031       0.050       0.054       0.061
+    S_GENDER         0.018       0.031       0.038       0.073       0.109       0.116       0.129
+    ITAL             0.000       0.000       0.000       0.001       0.001       0.001       0.002
+
+ ILL      ON
+    S_HISCED        -0.033      -0.026      -0.022      -0.002       0.018       0.022       0.030
+    S_GENDER        -0.126      -0.110      -0.102      -0.059      -0.016      -0.008       0.008
+    ITAL            -0.004      -0.004      -0.004      -0.003      -0.003      -0.002      -0.002
+
+ LEG      WITH
+    TURNOUT          0.084       0.089       0.092       0.106       0.121       0.123       0.129
+
+ ILL      WITH
+    TURNOUT         -0.052      -0.047      -0.044      -0.029      -0.014      -0.011      -0.005
+    LEG              0.065       0.071       0.073       0.089       0.104       0.107       0.113
+
+ S_HISCED WITH
+    S_GENDER        -0.045      -0.039      -0.036      -0.020      -0.005      -0.002       0.004
+    ITAL             4.967       5.647       5.995       7.811       9.628       9.976      10.656
+
+ S_GENDER WITH
+    ITAL             1.899       2.153       2.283       2.963       3.642       3.772       4.027
+
+ Means
+    S_GENDER         0.461       0.466       0.468       0.482       0.496       0.499       0.504
+    S_HISCED         2.243       2.264       2.274       2.331       2.387       2.398       2.419
+    ITAL           197.363     198.172     198.585     200.746     202.906     203.320     204.129
+
+ Intercepts
+    ACTSPRAY         2.202       2.258       2.286       2.434       2.583       2.611       2.666
+    ACTBLOCK         2.186       2.242       2.270       2.417       2.564       2.593       2.648
+    ACTOCUP          2.182       2.234       2.260       2.399       2.537       2.564       2.616
+    ACTTALK          2.336       2.386       2.412       2.547       2.681       2.707       2.757
+    ACTREP           1.803       1.847       1.869       1.987       2.105       2.127       2.171
+    ACTMARCH         2.122       2.168       2.192       2.314       2.437       2.460       2.506
+    ACTSIGN          2.170       2.221       2.247       2.384       2.521       2.547       2.598
+    VOTOPRE          2.476       2.522       2.546       2.669       2.792       2.816       2.862
+    VOTOMUN          2.309       2.360       2.386       2.523       2.660       2.686       2.738
+    VOTOINF          2.692       2.732       2.752       2.858       2.964       2.984       3.024
+
+ Variances
+    S_GENDER         0.249       0.249       0.249       0.250       0.250       0.250       0.250
+    S_HISCED         0.986       1.004       1.013       1.061       1.109       1.118       1.136
+    ITAL          1419.300    1453.053    1470.319    1560.485    1650.652    1667.917    1701.671
+
+ Residual Variances
+    ACTSPRAY         0.408       0.419       0.425       0.454       0.484       0.490       0.501
+    ACTBLOCK         0.129       0.139       0.145       0.174       0.203       0.208       0.219
+    ACTOCUP          0.181       0.192       0.197       0.227       0.256       0.262       0.273
+    ACTTALK          0.397       0.410       0.417       0.452       0.487       0.494       0.507
+    ACTREP           0.319       0.328       0.333       0.358       0.383       0.387       0.397
+    ACTMARCH         0.386       0.398       0.405       0.437       0.470       0.476       0.488
+    ACTSIGN          0.344       0.354       0.360       0.387       0.415       0.420       0.430
+    VOTOPRE          0.118       0.125       0.129       0.147       0.165       0.169       0.176
+    VOTOMUN          0.083       0.089       0.093       0.110       0.128       0.131       0.138
+    VOTOINF          0.298       0.307       0.311       0.333       0.356       0.360       0.368
+    TURNOUT          0.283       0.294       0.300       0.330       0.360       0.366       0.377
+    LEG              0.192       0.204       0.210       0.242       0.275       0.281       0.293
+    ILL              0.333       0.348       0.355       0.394       0.432       0.440       0.454
+
+
+CONFIDENCE INTERVALS OF STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ TURNOUT  BY
+    VOTOPRE          0.808       0.816       0.820       0.841       0.862       0.866       0.874
+    VOTOMUN          0.866       0.873       0.876       0.894       0.912       0.915       0.922
+    VOTOINF          0.575       0.586       0.591       0.621       0.651       0.657       0.668
+
+ LEG      BY
+    ACTTALK          0.535       0.549       0.556       0.594       0.631       0.639       0.653
+    ACTREP           0.553       0.565       0.572       0.605       0.638       0.645       0.657
+    ACTMARCH         0.544       0.557       0.564       0.600       0.636       0.643       0.656
+    ACTSIGN          0.613       0.625       0.631       0.662       0.693       0.699       0.710
+
+ ILL      BY
+    ACTSPRAY         0.649       0.659       0.664       0.690       0.715       0.720       0.730
+    ACTBLOCK         0.831       0.839       0.844       0.866       0.889       0.893       0.901
+    ACTOCUP          0.792       0.800       0.805       0.828       0.851       0.855       0.864
+
+ TURNOUT  ON
+    S_HISCED         0.019       0.033       0.040       0.076       0.113       0.120       0.134
+    S_GENDER        -0.056      -0.045      -0.039      -0.008       0.022       0.028       0.040
+    ITAL             0.189       0.203       0.210       0.247       0.285       0.292       0.306
+
+ LEG      ON
+    S_HISCED         0.006       0.020       0.027       0.064       0.102       0.109       0.123
+    S_GENDER         0.018       0.032       0.039       0.074       0.109       0.116       0.130
+    ITAL            -0.017       0.000       0.008       0.052       0.096       0.104       0.121
+
+ ILL      ON
+    S_HISCED        -0.053      -0.041      -0.035      -0.003       0.029       0.036       0.048
+    S_GENDER        -0.098      -0.086      -0.079      -0.046      -0.013      -0.007       0.006
+    ITAL            -0.250      -0.238      -0.232      -0.199      -0.166      -0.160      -0.147
+
+ LEG      WITH
+    TURNOUT          0.318       0.332       0.339       0.376       0.412       0.419       0.433
+
+ ILL      WITH
+    TURNOUT         -0.144      -0.129      -0.121      -0.080      -0.039      -0.031      -0.016
+    LEG              0.216       0.233       0.242       0.288       0.333       0.342       0.359
+
+ S_HISCED WITH
+    S_GENDER        -0.087      -0.075      -0.070      -0.039      -0.009      -0.003       0.008
+    ITAL             0.126       0.142       0.150       0.192       0.234       0.242       0.258
+
+ S_GENDER WITH
+    ITAL             0.096       0.109       0.116       0.150       0.184       0.191       0.204
+
+ Means
+    S_GENDER         0.923       0.933       0.938       0.965       0.992       0.997       1.007
+    S_HISCED         2.167       2.190       2.202       2.263       2.324       2.336       2.358
+    ITAL             4.845       4.902       4.931       5.082       5.233       5.262       5.318
+
+ Intercepts
+    ACTSPRAY         2.405       2.455       2.481       2.615       2.750       2.776       2.826
+    ACTBLOCK         2.652       2.711       2.741       2.897       3.054       3.084       3.143
+    ACTOCUP          2.594       2.650       2.678       2.827       2.975       3.004       3.059
+    ACTTALK          2.768       2.835       2.869       3.049       3.228       3.262       3.330
+    ACTREP           2.390       2.451       2.482       2.645       2.808       2.839       2.900
+    ACTMARCH         2.562       2.619       2.648       2.800       2.952       2.981       3.038
+    ACTSIGN          2.601       2.666       2.699       2.872       3.045       3.078       3.143
+    VOTOPRE          3.386       3.476       3.522       3.763       4.004       4.050       4.140
+    VOTOMUN          3.057       3.141       3.184       3.409       3.633       3.676       3.760
+    VOTOINF          3.521       3.607       3.650       3.880       4.109       4.153       4.238
+
+ Variances
+    S_GENDER         1.000       1.000       1.000       1.000       1.000       1.000       1.000
+    S_HISCED         1.000       1.000       1.000       1.000       1.000       1.000       1.000
+    ITAL             1.000       1.000       1.000       1.000       1.000       1.000       1.000
+
+ Residual Variances
+    ACTSPRAY         0.469       0.482       0.489       0.524       0.560       0.567       0.580
+    ACTBLOCK         0.189       0.203       0.211       0.250       0.289       0.297       0.311
+    ACTOCUP          0.255       0.269       0.277       0.315       0.353       0.360       0.374
+    ACTTALK          0.577       0.594       0.603       0.648       0.692       0.701       0.718
+    ACTREP           0.571       0.586       0.594       0.634       0.674       0.682       0.697
+    ACTMARCH         0.573       0.589       0.597       0.640       0.683       0.691       0.707
+    ACTSIGN          0.498       0.513       0.521       0.562       0.603       0.611       0.627
+    VOTOPRE          0.237       0.250       0.257       0.292       0.327       0.334       0.347
+    VOTOMUN          0.151       0.163       0.169       0.201       0.233       0.239       0.251
+    VOTOINF          0.556       0.570       0.577       0.614       0.651       0.658       0.672
+    TURNOUT          0.895       0.902       0.906       0.926       0.947       0.950       0.958
+    LEG              0.970       0.974       0.976       0.986       0.995       0.997       1.001
+    ILL              0.934       0.939       0.942       0.955       0.969       0.972       0.977
+
+
+MODEL MODIFICATION INDICES
+
+NOTE:  Modification indices for direct effects of observed dependent variables
+regressed on covariates may not be included.  To include these, request
+MODINDICES (ALL).
+
+Minimum M.I. value for printing the modification index    10.000
+
+                                   M.I.     E.P.C.  Std E.P.C.  StdYX E.P.C.
+
+BY Statements
+
+TURNOUT  BY ACTSPRAY              26.146    -0.130     -0.078       -0.084
+TURNOUT  BY ACTTALK               31.678     0.169      0.101        0.121
+TURNOUT  BY ACTREP                18.089    -0.115     -0.069       -0.091
+LEG      BY ACTSPRAY              23.839    -0.171     -0.085       -0.091
+LEG      BY VOTOMUN               14.662    -0.104     -0.051       -0.069
+LEG      BY VOTOINF               12.953     0.112      0.055        0.075
+ILL      BY ACTTALK               47.795    -0.180     -0.116       -0.138
+ILL      BY ACTREP                40.133     0.149      0.095        0.127
+ILL      BY VOTOINF               10.939    -0.066     -0.042       -0.057
+
+WITH Statements
+
+ACTREP   WITH ACTTALK            199.273     0.159      0.159        0.394
+ACTMARCH WITH ACTTALK             73.468    -0.106     -0.106       -0.238
+ACTMARCH WITH ACTREP              28.253    -0.059     -0.059       -0.150
+ACTSIGN  WITH ACTTALK             33.537    -0.075     -0.075       -0.180
+ACTSIGN  WITH ACTREP              52.184    -0.086     -0.086       -0.230
+ACTSIGN  WITH ACTMARCH           163.356     0.166      0.166        0.403
+VOTOMUN  WITH ACTSPRAY            13.616    -0.024     -0.024       -0.106
+VOTOMUN  WITH VOTOPRE             80.629     0.195      0.195        1.530
+VOTOINF  WITH ACTMARCH            19.166     0.037      0.037        0.096
+VOTOINF  WITH VOTOPRE             13.223    -0.036     -0.036       -0.161
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION
+
+
+           NU
+              ACTSPRAY      ACTBLOCK      ACTOCUP       ACTTALK       ACTREP
+              ________      ________      ________      ________      ________
+      1           1             2             3             4             5
+
+
+           NU
+              ACTMARCH      ACTSIGN       VOTOPRE       VOTOMUN       VOTOINF
+              ________      ________      ________      ________      ________
+      1           6             7             8             9            10
+
+
+           NU
+              S_GENDER      S_HISCED      ITAL
+              ________      ________      ________
+      1           0             0             0
+
+
+           LAMBDA
+              TURNOUT       LEG           ILL           S_GENDER      S_HISCED
+              ________      ________      ________      ________      ________
+ ACTSPRAY           0             0             0             0             0
+ ACTBLOCK           0             0            11             0             0
+ ACTOCUP            0             0            12             0             0
+ ACTTALK            0             0             0             0             0
+ ACTREP             0            13             0             0             0
+ ACTMARCH           0            14             0             0             0
+ ACTSIGN            0            15             0             0             0
+ VOTOPRE            0             0             0             0             0
+ VOTOMUN           16             0             0             0             0
+ VOTOINF           17             0             0             0             0
+ S_GENDER           0             0             0             0             0
+ S_HISCED           0             0             0             0             0
+ ITAL               0             0             0             0             0
+
+
+           LAMBDA
+              ITAL
+              ________
+ ACTSPRAY           0
+ ACTBLOCK           0
+ ACTOCUP            0
+ ACTTALK            0
+ ACTREP             0
+ ACTMARCH           0
+ ACTSIGN            0
+ VOTOPRE            0
+ VOTOMUN            0
+ VOTOINF            0
+ S_GENDER           0
+ S_HISCED           0
+ ITAL               0
+
+
+           THETA
+              ACTSPRAY      ACTBLOCK      ACTOCUP       ACTTALK       ACTREP
+              ________      ________      ________      ________      ________
+ ACTSPRAY          18
+ ACTBLOCK           0            19
+ ACTOCUP            0             0            20
+ ACTTALK            0             0             0            21
+ ACTREP             0             0             0             0            22
+ ACTMARCH           0             0             0             0             0
+ ACTSIGN            0             0             0             0             0
+ VOTOPRE            0             0             0             0             0
+ VOTOMUN            0             0             0             0             0
+ VOTOINF            0             0             0             0             0
+ S_GENDER           0             0             0             0             0
+ S_HISCED           0             0             0             0             0
+ ITAL               0             0             0             0             0
+
+
+           THETA
+              ACTMARCH      ACTSIGN       VOTOPRE       VOTOMUN       VOTOINF
+              ________      ________      ________      ________      ________
+ ACTMARCH          23
+ ACTSIGN            0            24
+ VOTOPRE            0             0            25
+ VOTOMUN            0             0             0            26
+ VOTOINF            0             0             0             0            27
+ S_GENDER           0             0             0             0             0
+ S_HISCED           0             0             0             0             0
+ ITAL               0             0             0             0             0
+
+
+           THETA
+              S_GENDER      S_HISCED      ITAL
+              ________      ________      ________
+ S_GENDER           0
+ S_HISCED           0             0
+ ITAL               0             0             0
+
+
+           ALPHA
+              TURNOUT       LEG           ILL           S_GENDER      S_HISCED
+              ________      ________      ________      ________      ________
+      1           0             0             0            28            29
+
+
+           ALPHA
+              ITAL
+              ________
+      1          30
+
+
+           BETA
+              TURNOUT       LEG           ILL           S_GENDER      S_HISCED
+              ________      ________      ________      ________      ________
+ TURNOUT            0             0             0            31            32
+ LEG                0             0             0            34            35
+ ILL                0             0             0            37            38
+ S_GENDER           0             0             0             0             0
+ S_HISCED           0             0             0             0             0
+ ITAL               0             0             0             0             0
+
+
+           BETA
+              ITAL
+              ________
+ TURNOUT           33
+ LEG               36
+ ILL               39
+ S_GENDER           0
+ S_HISCED           0
+ ITAL               0
+
+
+           PSI
+              TURNOUT       LEG           ILL           S_GENDER      S_HISCED
+              ________      ________      ________      ________      ________
+ TURNOUT           40
+ LEG               41            42
+ ILL               43            44            45
+ S_GENDER           0             0             0            46
+ S_HISCED           0             0             0            47            48
+ ITAL               0             0             0            49            50
+
+
+           PSI
+              ITAL
+              ________
+ ITAL              51
+
+
+     STARTING VALUES
+
+
+           NU
+              ACTSPRAY      ACTBLOCK      ACTOCUP       ACTTALK       ACTREP
+              ________      ________      ________      ________      ________
+      1         1.750         1.649         1.651         2.786         2.207
+
+
+           NU
+              ACTMARCH      ACTSIGN       VOTOPRE       VOTOMUN       VOTOINF
+              ________      ________      ________      ________      ________
+      1         2.553         2.649         3.519         3.466         3.511
+
+
+           NU
+              S_GENDER      S_HISCED      ITAL
+              ________      ________      ________
+      1         0.000         0.000         0.000
+
+
+           LAMBDA
+              TURNOUT       LEG           ILL           S_GENDER      S_HISCED
+              ________      ________      ________      ________      ________
+ ACTSPRAY       0.000         0.000         1.000         0.000         0.000
+ ACTBLOCK       0.000         0.000         1.121         0.000         0.000
+ ACTOCUP        0.000         0.000         1.098         0.000         0.000
+ ACTTALK        0.000         1.000         0.000         0.000         0.000
+ ACTREP         0.000         0.933         0.000         0.000         0.000
+ ACTMARCH       0.000         0.853         0.000         0.000         0.000
+ ACTSIGN        0.000         0.887         0.000         0.000         0.000
+ VOTOPRE        1.000         0.000         0.000         0.000         0.000
+ VOTOMUN        1.127         0.000         0.000         0.000         0.000
+ VOTOINF        0.756         0.000         0.000         0.000         0.000
+ S_GENDER       0.000         0.000         0.000         1.000         0.000
+ S_HISCED       0.000         0.000         0.000         0.000         1.000
+ ITAL           0.000         0.000         0.000         0.000         0.000
+
+
+           LAMBDA
+              ITAL
+              ________
+ ACTSPRAY       0.000
+ ACTBLOCK       0.000
+ ACTOCUP        0.000
+ ACTTALK        0.000
+ ACTREP         0.000
+ ACTMARCH       0.000
+ ACTSIGN        0.000
+ VOTOPRE        0.000
+ VOTOMUN        0.000
+ VOTOINF        0.000
+ S_GENDER       0.000
+ S_HISCED       0.000
+ ITAL           1.000
+
+
+           THETA
+              ACTSPRAY      ACTBLOCK      ACTOCUP       ACTTALK       ACTREP
+              ________      ________      ________      ________      ________
+ ACTSPRAY       0.433
+ ACTBLOCK       0.000         0.348
+ ACTOCUP        0.000         0.000         0.360
+ ACTTALK        0.000         0.000         0.000         0.349
+ ACTREP         0.000         0.000         0.000         0.000         0.282
+ ACTMARCH       0.000         0.000         0.000         0.000         0.000
+ ACTSIGN        0.000         0.000         0.000         0.000         0.000
+ VOTOPRE        0.000         0.000         0.000         0.000         0.000
+ VOTOMUN        0.000         0.000         0.000         0.000         0.000
+ VOTOINF        0.000         0.000         0.000         0.000         0.000
+ S_GENDER       0.000         0.000         0.000         0.000         0.000
+ S_HISCED       0.000         0.000         0.000         0.000         0.000
+ ITAL           0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              ACTMARCH      ACTSIGN       VOTOPRE       VOTOMUN       VOTOINF
+              ________      ________      ________      ________      ________
+ ACTMARCH       0.341
+ ACTSIGN        0.000         0.344
+ VOTOPRE        0.000         0.000         0.251
+ VOTOMUN        0.000         0.000         0.000         0.274
+ VOTOINF        0.000         0.000         0.000         0.000         0.271
+ S_GENDER       0.000         0.000         0.000         0.000         0.000
+ S_HISCED       0.000         0.000         0.000         0.000         0.000
+ ITAL           0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              S_GENDER      S_HISCED      ITAL
+              ________      ________      ________
+ S_GENDER       0.000
+ S_HISCED       0.000         0.000
+ ITAL           0.000         0.000         0.000
+
+
+           ALPHA
+              TURNOUT       LEG           ILL           S_GENDER      S_HISCED
+              ________      ________      ________      ________      ________
+      1         0.000         0.000         0.000         0.482         2.332
+
+
+           ALPHA
+              ITAL
+              ________
+      1       200.946
+
+
+           BETA
+              TURNOUT       LEG           ILL           S_GENDER      S_HISCED
+              ________      ________      ________      ________      ________
+ TURNOUT        0.000         0.000         0.000         0.000         0.000
+ LEG            0.000         0.000         0.000         0.000         0.000
+ ILL            0.000         0.000         0.000         0.000         0.000
+ S_GENDER       0.000         0.000         0.000         0.000         0.000
+ S_HISCED       0.000         0.000         0.000         0.000         0.000
+ ITAL           0.000         0.000         0.000         0.000         0.000
+
+
+           BETA
+              ITAL
+              ________
+ TURNOUT        0.000
+ LEG            0.000
+ ILL            0.000
+ S_GENDER       0.000
+ S_HISCED       0.000
+ ITAL           0.000
+
+
+           PSI
+              TURNOUT       LEG           ILL           S_GENDER      S_HISCED
+              ________      ________      ________      ________      ________
+ TURNOUT        0.050
+ LEG            0.000         0.050
+ ILL            0.000         0.000         0.050
+ S_GENDER       0.000         0.000         0.000         0.125
+ S_HISCED       0.000         0.000         0.000         0.000         0.530
+ ITAL           0.000         0.000         0.000         0.000         0.000
+
+
+           PSI
+              ITAL
+              ________
+ ITAL         778.970
+
+
+     Beginning Time:  01:59:07
+        Ending Time:  01:59:07
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2015 Muthen & Muthen

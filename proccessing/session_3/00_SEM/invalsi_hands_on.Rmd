@@ -1,0 +1,160 @@
+---
+title: 'Invalsi_Workshop: Hands on!'
+author: "Daniel Miranda"
+date: "25-02-2021"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Read data
+
+```{r }
+pacman::p_load(dplyr, stargazer, skimr, xaringan, srvyr, lme4, broom, texreg, scales, plotly, desctable, descriptr, forcats, GGally, MplusAutomation, semPlot, corrplot)
+
+
+load("./data/mergeita16.Rdata")
+names(mergeita16)
+
+desc= mergeita16 %>%
+  select(actspray, actblock, actocup, acttalk, actrep, actmarch, actsign, votopre, votomun, votoinf)
+```
+
+
+```{r , results='asis'}
+stargazer(desc, type = "html")
+```
+
+## Correlations
+
+```{r , results='asis'}
+corMat  <- cor(desc, use = "pairwise.complete.obs")  # estimar matriz pearson
+options(digits=3) # decimales
+#print(corMat)
+
+stargazer(corMat, type = "html") 
+
+corrplot(corMat, type="lower",
+         order="AOE", cl.pos="b", tl.pos="d") #agrega nombres en diag.
+
+
+```
+
+## Model specification and estimation: CFA
+
+```{r , eval=TRUE }
+
+semPaths("./m4.out", intercepts = FALSE, rotation=2)
+
+m4 <- mplusObject(
+  TITLE = "CFA;",
+  VARIABLE=" 
+  cluster = idschool_scr;
+  Stratification = jkzones;
+  Weight = totwgts;",
+  ANALYSIS=
+    "type = complex;",
+  
+  MODEL = "
+   turnout BY votopre votomun votoinf;
+   leg BY acttalk actrep actmarch actsign;
+   ill BY actspray actblock actocup;
+  "
+  ,
+  OUTPUT = "CINTERVAL sampstat mod stdyx;",
+  rdata = mergeita16)
+
+fit4 <- mplusModeler(m4, modelout = "m4.inp", run = 1L)
+
+```
+
+## Model results: CFA
+```{r, eval=TRUE}
+screenreg(fit4, type = 'stdyx', summaries = c("ChiSqM_Value", "ChiSqM_PValue", "CFI", "TLI", "RMSEA_Estimate", "Observations"), digits = 3, single.row=TRUE)
+
+```
+
+## Model specification and estimation: SEM (Education + Gender + Reading skills)
+
+```{r , eval=TRUE }
+
+semPaths("./m7.out", intercepts = FALSE, rotation=2)
+
+m7 <- mplusObject(
+  TITLE = "SEM;",
+  VARIABLE=" 
+  cluster = idschool_scr;
+  Stratification = jkzones;
+  Weight = totwgts;",
+  ANALYSIS=
+    "type = complex;",
+  
+  MODEL = "
+   turnout BY votopre votomun votoinf;
+   leg BY acttalk actrep actmarch actsign;
+   ill BY actspray actblock actocup;
+   
+   turnout ON s_hisced s_gender ital ;
+   leg ON s_hisced s_gender ital;
+   ill ON s_hisced s_gender ital;
+   
+  "
+  ,
+  OUTPUT = "CINTERVAL sampstat mod stdyx;",
+  rdata = mergeita16)
+
+fit7 <- mplusModeler(m7, modelout = "m7.inp", run = 1L)
+
+```
+
+## Model results: SEM
+```{r, eval=TRUE}
+screenreg(fit7, type = 'stdyx', summaries = c("ChiSqM_Value", "ChiSqM_PValue", "CFI", "TLI", "RMSEA_Estimate", "Observations"), digits = 3, single.row=TRUE)
+
+```
+
+## Model specification and estimation: SEM (Education + Gender + Reading skills) +  Covariances
+
+```{r , eval=TRUE }
+
+semPaths("./m7a.out", intercepts = FALSE, rotation=2)
+
+m7a <- mplusObject(
+  TITLE = "SEM;",
+  VARIABLE=" 
+  cluster = idschool_scr;
+  Stratification = jkzones;
+  Weight = totwgts;",
+  ANALYSIS=
+    "type = complex;",
+  
+  MODEL = "
+   turnout BY votopre votomun votoinf;
+   leg BY acttalk actrep actmarch actsign;
+   ill BY actspray actblock actocup;
+   
+   turnout ON s_hisced s_gender ital ;
+   leg ON s_hisced s_gender ital;
+   ill ON s_hisced s_gender ital;
+   
+   s_hisced WITH  s_gender ital;
+   s_gender WITH ital;
+   
+  "
+  ,
+  OUTPUT = "CINTERVAL sampstat mod stdyx;",
+  rdata = mergeita16)
+
+fit7a <- mplusModeler(m7a, modelout = "m7a.inp", run = 1L)
+
+```
+
+## Model results: SEM
+```{r, eval=TRUE}
+screenreg(fit7a, type = 'stdyx', summaries = c("ChiSqM_Value", "ChiSqM_PValue", "CFI", "TLI", "RMSEA_Estimate", "Observations"), digits = 3, single.row=TRUE)
+
+```
