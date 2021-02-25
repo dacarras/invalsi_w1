@@ -13,7 +13,7 @@ output: github_document
 - Latent Class Models
 - Structural Equation Models
 
->Note: press this link to [download all](https://www.dropbox.com/sh/asn8sp0qf7f7rvl/AAAa_gBQuha513OQbTxsPHKMa?dl=1).
+>Note: press this link to [download all slides in pdf](https://www.dropbox.com/sh/asn8sp0qf7f7rvl/AAAa_gBQuha513OQbTxsPHKMa?dl=1).
 
 # Workshop examples
 
@@ -24,7 +24,7 @@ output: github_document
 
 ## LCA
 
-- Download presented examples
+- Download presented examples [`to be updated soon`]
 
 ## SEM
 

@@ -1,21 +1,34 @@
 
 # INVALSI 2021 Workshop 1
 
--   Repository to share worskop materials
+-   Repository to share workskop materials
 
-## Description
+# Slides
 
-Some links here [github](https://github.com/dacarras/invalsi_w1):
+-   Introduction
+-   Data preparation
+-   Latent Class Models
+-   Structural Equation Models
 
-``` r
-# some installation code here
-```
+> Note: press this link to [download all slides in
+> pdf](https://www.dropbox.com/sh/asn8sp0qf7f7rvl/AAAa_gBQuha513OQbTxsPHKMa?dl=1).
 
-> This is a note
+# Workshop examples
 
-# Title 1
+## Data preparation
 
-## Title 2
+-   Download the files to replicate the **import and export data for
+    modelling**
+    [example](https://www.dropbox.com/sh/li9sndp5irp0ffa/AACcp5llXkcCWKDwcFeySt7Na?dl=1).
+    -   link also
+        [here](https://www.dropbox.com/sh/li9sndp5irp0ffa/AACcp5llXkcCWKDwcFeySt7Na?dl=1).
 
--   text
--   text
+## LCA
+
+-   Download presented examples \[`to be updated soon`\]
+
+## SEM
+
+-   Download the files to replicate the commented
+    [example](https://www.dropbox.com/sh/lggup1w5h0mp4k4/AADbDIzv-O5XgpPE2-eZfKUDa?dl=1),
+    and the presented slides.
