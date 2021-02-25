@@ -1,7 +1,7 @@
 
 # INVALSI 2021 Workshop 1
 
--   Repository to share workskop materials
+-   Repository to share workshop materials
 
 # Slides
 
